@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const searchImages = async (term) => {
-    const response = await axios.get('https://api.unsplash.com/search/photos', {
+    const response = await axios.get(import.meta.env.VITE_API_URL, {
         headers: {
-            Authorization: 'Client-ID PUPtzUWhVRR0Xy6GPCJhoNdQ7jARQifGTkBrcPb5x2U,'
+            Authorization: `Client-ID ${import.meta.env.VITE_API_KEY}`
         },
         params: {
             query: term,
